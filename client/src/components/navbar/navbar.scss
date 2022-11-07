@@ -1,6 +1,8 @@
 @import "../../style.scss";
 
 .container{
+  position: relative;
+  opacity: 10;
   .navbar {
     @include themify($themes) {
       display: flex;
@@ -86,7 +88,7 @@
   }
   .resultContainer
   {
-    opacity: 1;
+    
     align-self: center;
     margin-left: auto;
     margin-right: auto;
@@ -96,7 +98,7 @@
       position:sticky;
       top:0;
       height:50px;
-      background-color: white;
+      background-color : rgba(255, 255, 255, 0.71);
       width:100%;
     }
   }

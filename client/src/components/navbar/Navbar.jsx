@@ -22,6 +22,7 @@ const Navbar = () => {
   const { toggle, darkMode } = useContext(DarkModeContext);
   const { currentUser } = useContext(AuthContext);
   const [openSearch, setOpenSearch] = useState(false);
+  const [openSearch2, setOpenSearch2] = useState(false);
   const [Search, setSearch] = useState(false);
   const handleClick = async (e) => {
     try {
@@ -33,9 +34,17 @@ const Navbar = () => {
   }
   const [input, setInputs] = useState("");
   const [err, setErr] = useState(null);
+  
 
   const handleChange = (e) => {
     setInputs((prev) => prev = e.target.value);
+    
+    setOpenSearch2(!openSearch2);
+    
+    
+
+    
+
 
 
   };
@@ -96,7 +105,8 @@ const Navbar = () => {
       </div>
 
     </div>
-    <div className="resultContainer">{openSearch && <div className="result"><Search1 setOpenSearch={setOpenSearch} input={input} /> </div>}</div>
+    <div className="resultContainer">{openSearch && openSearch2 && <div className="result"><Search1 setOpenSearch={setOpenSearch} input={input} /> </div>}</div>
+    <div className="resultContainer">{openSearch && !openSearch2 && <div className="result"><Search1 setOpenSearch={setOpenSearch} input={input} /> </div>}</div>
     </div>
     
   );
