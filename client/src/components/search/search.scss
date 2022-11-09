@@ -10,7 +10,9 @@
   margin-left: 370px;
 
   z-index: 1000; 
-  background-color : rgba(255, 255, 255, 0.83);
+  margin-top: 67px;
+  position: fixed;
+  background-color:#00ABB3;
   overflow: scroll;
   &::-webkit-scrollbar {
     display: none;
@@ -71,6 +73,6 @@
     padding: 10px;
     cursor: pointer;
     color: white;
-    background-color: #5271ff;
+    background-color: #256D85;
   }
 }

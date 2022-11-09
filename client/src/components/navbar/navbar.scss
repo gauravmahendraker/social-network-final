@@ -19,9 +19,12 @@
       border-bottom: 1px solid themed("border");
       position: fixed;
       top: 0;
-      background-color: themed("bg");
+      // background-color: themed("bg");
+      // background-color:  #f1d9ad;
+      background-color:#00ABB3;
+
       color:themed("textColor");
-      z-index: 999;
+      z-index: 9999;
       
   
       .left {
@@ -47,7 +50,8 @@
           input {
             border: none;
             width: 500px;
-            background-color: transparent;
+          
+            background-color:#00ABB3;
             color: themed("textColor");
   
             @include mobile{
@@ -100,12 +104,13 @@
     margin-left: auto;
     margin-right: auto;
     z-index: 1000;
+    background-color:#00ABB3;
     position:relative;
     .result{
       position:sticky;
       top:0;
       height:50px;
-      background-color : rgba(255, 255, 255, 0.71);
+     // background-color : #A5F1E9;
       width:100%;
     }
   }
@@ -120,6 +125,6 @@
     padding: 10px;
     cursor: pointer;
     color: white;
-    background-color: #5271ff;
+    background-color: #256D85;
   }
 }
