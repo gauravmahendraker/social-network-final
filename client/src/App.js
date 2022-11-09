@@ -16,6 +16,7 @@ import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/authContext";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { style } from "@mui/system";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -27,7 +28,7 @@ function App() {
   const Layout = () => {
     return (
       <QueryClientProvider client={queryClient}>
-        <div className={`theme-${darkMode ? "dark" : "light"}`}>
+        <div className={`theme-${darkMode ? "dark" : "light"}`} >
           <Navbar />
           <div style={{ display: "flex" }}>
             <LeftBar />

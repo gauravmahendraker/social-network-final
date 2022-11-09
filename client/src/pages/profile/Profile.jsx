@@ -15,10 +15,12 @@ import { useLocation } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/authContext";
 import Update from "../../components/update/Update";
+import Chat from "../../components/chat/Chat";
 import { useState } from "react";
 
 const Profile = () => {
   const [openUpdate, setOpenUpdate] = useState(false);
+  const [openChat,setOpenChat]=useState(false);
   const { currentUser } = useContext(AuthContext);
 
   const userId = parseInt(useLocation().pathname.split("/")[2]);
@@ -88,7 +90,8 @@ const Profile = () => {
                 </a>
               </div>
               <div className="center">
-                <span>{data.name}</span>
+                <div className="name"><span>{data.name}</span></div>
+                {/* <span>{data.name}</span> */}
                 <div className="info">
                   <div className="item">
                     <PlaceIcon />
@@ -99,6 +102,8 @@ const Profile = () => {
                     <span>{data.website}</span>
                   </div>
                 </div>
+                
+                
                 {rIsLoading ? (
                   "loading"
                 ) : userId === currentUser.id ? (
@@ -109,18 +114,26 @@ const Profile = () => {
                       ? "Following"
                       : "Follow"}
                   </button>
+                  
+
+                  
                 )}
+                { <button onClick={() => setOpenChat(true)}> chat </button> }
+                
               </div>
               <div className="right">
                 <EmailOutlinedIcon />
                 <MoreVertIcon />
               </div>
             </div>
+            {openChat && <div className="chat"><Chat setOpenChat={setOpenChat} userId={userId} /></div>}
             <Posts userId={userId} />
           </div>
         </>
       )}
       {openUpdate && <Update setOpenUpdate={setOpenUpdate} user={data} />}
+      
+
     </div>
   );
 };

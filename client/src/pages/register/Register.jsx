@@ -32,11 +32,9 @@ const Register = () => {
     <div className="register">
       <div className="card">
         <div className="left">
-          <h1>Lama Social.</h1>
+          <h1>Fake Book</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero cum,
-            alias totam numquam ipsa exercitationem dignissimos, error nam,
-            consequatur.
+          The Facebook app Page celebrates how our friends inspire us, support us, and help us discover the world when we connect.
           </p>
           <span>Do you have an account?</span>
           <Link to="/login">

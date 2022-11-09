@@ -34,16 +34,16 @@ const Navbar = () => {
   }
   const [input, setInputs] = useState("");
   const [err, setErr] = useState(null);
-  
+
 
   const handleChange = (e) => {
     setInputs((prev) => prev = e.target.value);
-    
-    setOpenSearch2(!openSearch2);
-    
-    
 
-    
+    setOpenSearch2(!openSearch2);
+
+
+
+
 
 
 
@@ -63,52 +63,57 @@ const Navbar = () => {
   return (
     <div className="container">
       <div className="navbar">
-      <div className="left">
-        <Link to="/" style={{ textDecoration: "none" }}>
-          <span>SocialiZe</span>
-        </Link>
-        <a href="/"><HomeOutlinedIcon /></a>
-
-        {darkMode ? (
-          <WbSunnyOutlinedIcon onClick={toggle} />
-        ) : (
-          <DarkModeOutlinedIcon onClick={toggle} />
-        )}
-        <GridViewOutlinedIcon />
-        <div className="search">
-          <SearchOutlinedIcon onClick={() => setOpenSearch(true)} />
-          <input type="text" placeholder="Search..." name="username"
-            onChange={handleChange} />
-
-            
-        </div>
-
-        {/* <Search1 input='test' /> */}
-        {/* <SearchBar placeholder="Enter a Book Name..." data={data} /> */}
-        {/* console.log(openSearch); */}
-
-      </div>
-      <div className="right">
-        <PersonOutlinedIcon />
-        <EmailOutlinedIcon />
-        <NotificationsOutlinedIcon />
-        <div className="user">
-          <img
-            src={"/upload/" + currentUser.profilePic}
-            alt=""
-          />
-          <span>{currentUser.name}</span>
-          <Link to="/login">
-            <button onClick={handleClick}>Logout</button>
+        <div className="left">
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <span>FakeBook</span>
           </Link>
-        </div>
-      </div>
+          <a href="/"><HomeOutlinedIcon /></a>
 
+          {darkMode ? (
+            <WbSunnyOutlinedIcon onClick={toggle} />
+          ) : (
+            <DarkModeOutlinedIcon onClick={toggle} />
+          )}
+          <GridViewOutlinedIcon />
+          <div className="search">
+            <SearchOutlinedIcon onClick={() => setOpenSearch(true)} />
+            <input type="text" placeholder="Search..." name="username"
+              onChange={handleChange} />
+
+
+          </div>
+
+          {/* <Search1 input='test' /> */}
+          {/* <SearchBar placeholder="Enter a Book Name..." data={data} /> */}
+          {/* console.log(openSearch); */}
+
+        </div>
+        <div className="right">
+          <PersonOutlinedIcon />
+          <EmailOutlinedIcon />
+          <NotificationsOutlinedIcon />
+          <div className="user">
+            <img
+              src={"/upload/" + currentUser.profilePic}
+              alt=""
+            />
+            <Link
+              to={`/profile/${currentUser.id}`}
+              style={{ textDecoration: "none", color: "inherit" }}
+            ><span >{currentUser.name}</span></Link>
+            
+
+            <Link to="/login">
+              <button onClick={handleClick}>Logout</button>
+            </Link>
+          </div>
+        </div>
+
+      </div>
+      <div className="resultContainer">{openSearch && openSearch2 && <div className="result"><Search1 setOpenSearch={setOpenSearch} input={input} /> </div>}</div>
+      <div className="resultContainer">{openSearch && !openSearch2 && <div className="result"><Search1 setOpenSearch={setOpenSearch} input={input} /> </div>}</div>
     </div>
-    <div className="resultContainer">{openSearch && openSearch2 && <div className="result"><Search1 setOpenSearch={setOpenSearch} input={input} /> </div>}</div>
-    <div className="resultContainer">{openSearch && !openSearch2 && <div className="result"><Search1 setOpenSearch={setOpenSearch} input={input} /> </div>}</div>
-    </div>
-    
+
   );
 };
 

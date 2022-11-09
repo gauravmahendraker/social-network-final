@@ -8,6 +8,7 @@ import commentRoutes from "./routes/comments.js";
 import likeRoutes from "./routes/likes.js";
 import relationshipRoutes from "./routes/relationships.js";
 import frndRoute from "./routes/friends.js";
+import chatRoute from "./routes/chats.js";
 import suggestRoute from "./routes/suggestions.js";
 import cors from "cors";
 import multer from "multer";
@@ -50,7 +51,8 @@ app.use("/api/posts", postRoutes);
 app.use("/api/comments", commentRoutes);
 app.use("/api/likes", likeRoutes);
 app.use("/api/relationships", relationshipRoutes);
-app.use("/api/search",searchUser)
+app.use("/api/search",searchUser);
+app.use("/api/chats",chatRoute);
 
 app.listen(8802, () => {
   console.log("API working!");
