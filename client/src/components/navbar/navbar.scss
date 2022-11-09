@@ -102,4 +102,17 @@
       width:100%;
     }
   }
+  button{
+    
+    align-items: center;
+    
+    width:80px;
+    margin:15px;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    background-color: #5271ff;
+  }
 }
